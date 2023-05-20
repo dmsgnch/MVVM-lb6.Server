@@ -1,0 +1,12 @@
+{
+  "version": 2,
+  "dgSpecHash": "REHxtr9Gkbt3rQ9xHSOWMpnWwSnmMSSMCnO8wmyH4qNKFgRr4j44b0MGHq0LF9CFiWOkCt9z5SOUxY44FeYOtA==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\Dimchik\\source\\repos\\RiderProjects\\Lb6Project\\MVVM-lb6.Server\\MVVM-lb6.Domain\\MVVM-lb6.Domain.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\Dimchik\\.nuget\\packages\\microsoft.netcore.app.ref\\3.1.0\\microsoft.netcore.app.ref.3.1.0.nupkg.sha512",
+    "C:\\Users\\Dimchik\\.nuget\\packages\\microsoft.windowsdesktop.app.ref\\3.1.0\\microsoft.windowsdesktop.app.ref.3.1.0.nupkg.sha512",
+    "C:\\Users\\Dimchik\\.nuget\\packages\\microsoft.aspnetcore.app.ref\\3.1.10\\microsoft.aspnetcore.app.ref.3.1.10.nupkg.sha512"
+  ],
+  "logs": []
+}

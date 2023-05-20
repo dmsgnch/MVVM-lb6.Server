@@ -1,0 +1,9 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <TargetFramework>netcoreapp3.1</TargetFramework>
+        <RootNamespace>MVVM_lb6.Domain</RootNamespace>
+        <Nullable>enable</Nullable>
+    </PropertyGroup>
+
+</Project>

@@ -1,0 +1,6 @@
+C:\Users\Dimchik\source\repos\RiderProjects\Lb6Project\MVVM-lb6.Server\MVVM-lb6.Server\obj\Debug\net7.0\MVVM-lb6.Server.csproj.AssemblyReference.cache
+C:\Users\Dimchik\source\repos\RiderProjects\Lb6Project\MVVM-lb6.Server\MVVM-lb6.Server\obj\Debug\net7.0\MVVM-lb6.Server.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Dimchik\source\repos\RiderProjects\Lb6Project\MVVM-lb6.Server\MVVM-lb6.Server\obj\Debug\net7.0\MVVM-lb6.Server.AssemblyInfoInputs.cache
+C:\Users\Dimchik\source\repos\RiderProjects\Lb6Project\MVVM-lb6.Server\MVVM-lb6.Server\obj\Debug\net7.0\MVVM-lb6.Server.AssemblyInfo.cs
+C:\Users\Dimchik\source\repos\RiderProjects\Lb6Project\MVVM-lb6.Server\MVVM-lb6.Server\obj\Debug\net7.0\MVVM-lb6.Server.csproj.CoreCompileInputs.cache
+C:\Users\Dimchik\source\repos\RiderProjects\Lb6Project\MVVM-lb6.Server\MVVM-lb6.Server\obj\Debug\net7.0\MVVM-lb6.Server.MvcApplicationPartsAssemblyInfo.cache
