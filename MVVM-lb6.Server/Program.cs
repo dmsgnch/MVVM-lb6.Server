@@ -22,7 +22,6 @@ builder.Configuration.Bind("Settings", settings);
 builder.Services.AddSingleton(settings);
 
 var localDatabase = builder.Configuration.GetConnectionString(ConnectionKeys.Local);
-
 builder.Services.AddDbContext<ApplicationDbContext>(o => o.UseSqlite(localDatabase));
 
 builder.Services.AddControllers().AddNewtonsoftJson(i =>
@@ -30,8 +29,9 @@ builder.Services.AddControllers().AddNewtonsoftJson(i =>
     
 });
 
-builder.Services.AddScoped<IAuthenticationService, AuthenticationService>();
+
 builder.Services.AddScoped<IHashProvider, HashProvider>();
+builder.Services.AddScoped<IAuthenticationService, AuthenticationService>();
 
 builder.Services.AddHttpContextAccessor();
 
@@ -43,24 +43,6 @@ builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme).AddJw
         ValidateIssuerSigningKey = true,
         ValidateAudience = false,
         ValidateIssuer = false,
-    };
-    
-    o.Events = new JwtBearerEvents
-    {
-        OnMessageReceived = context =>
-        {
-            var accessToken = context.Request.Query["access_token"];
-
-            // If the request is for our hub...
-            var path = context.HttpContext.Request.Path;
-            if (!string.IsNullOrEmpty(accessToken) &&
-                (path.StartsWithSegments("/hubs/lobby")))
-            {
-                // Read the token out of the query string
-                context.Token = accessToken;
-            }
-            return Task.CompletedTask;
-        }
     };
 });
 

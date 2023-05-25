@@ -3,13 +3,14 @@ using System.Security.Claims;
 using System.Text;
 using System.Text.RegularExpressions;
 using Microsoft.IdentityModel.Tokens;
+using MVVM_lb6.Domain.Models;
+using MVVM_lb6.Domain.Responses;
 using MVVM_lb6.Server.Helpers;
 using MVVM_lb6.Server.Models;
 using Newtonsoft.Json;
 using Server.Common.Constants;
 using Server.Domain;
 using Server.Services.Abstract;
-using SharedLibrary.Models;
 
 namespace Server.Services;
 
@@ -26,10 +27,10 @@ public class AuthenticationService : IAuthenticationService
         _hashProvider = hashProvider;
     }
 
-    public AuthenticationResult Register(string username, string individualEmployeeNumber, string password)
+    public ServiceResult Register(string username, string individualEmployeeNumber, string password)
 	{
 		if(Context.Users.Any(u => u.IndividualEmployeeNumber.Equals(individualEmployeeNumber)))
-			return new AuthenticationResult(new [] {ErrorMessages.User.AlreadyExists});
+			return new ServiceResult(ErrorMessages.User.AlreadyExists) {IsSuccessful = false};
 
 		var user = new ApplicationUser
 		{
@@ -42,9 +43,7 @@ public class AuthenticationService : IAuthenticationService
 		Context.Add(user);
 		Context.SaveChanges();
 
-		string accessToken = GenerateJwtToken(AssembleClaimsIdentity(user));
-
-		return new AuthenticationResult(new [] {SuccessMessages.User.Created}, accessToken);
+		return new ServiceResult(SuccessMessages.User.Created) {IsSuccessful = true};
 	}
     
 	public AuthenticationResult Login(string individualEmployeeNumber, string password)

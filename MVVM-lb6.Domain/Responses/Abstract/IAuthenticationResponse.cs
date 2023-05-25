@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace SharedLibrary.Responses.Abstract
+namespace MVVM_lb6.Domain.Responses.Abstract
 {
 	public interface IAuthenticationResponse
 	{

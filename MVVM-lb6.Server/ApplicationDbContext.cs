@@ -1,6 +1,5 @@
 using Microsoft.EntityFrameworkCore;
 using MVVM_lb6.Domain.Models;
-using SharedLibrary.Models;
 
 namespace Server;
 

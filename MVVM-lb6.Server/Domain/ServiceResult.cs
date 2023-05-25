@@ -2,18 +2,18 @@
 {
     public class ServiceResult
     {
-        public bool Success { get; set; }
-        public string ErrorMessage { get; set; }
+        public bool IsSuccessful { get; set; }
+        public string[]? Message { get; set; }
 
         public ServiceResult()
         {
-            Success = true;
-            ErrorMessage = string.Empty;
+            IsSuccessful = true;
+            Message = null;
         }
-        public ServiceResult(string errorMessage)
+        public ServiceResult(params string[] errorMessage)
         {
-            Success = false;
-            ErrorMessage = errorMessage;
+            IsSuccessful = false;
+            Message = errorMessage;
         }
     }
     
@@ -25,7 +25,7 @@
         {
             Value = value;
         }
-        public ServiceResult(string errorMessage) : base(errorMessage)
+        public ServiceResult(string message) : base(message)
         {
             Value = default(T);
         }

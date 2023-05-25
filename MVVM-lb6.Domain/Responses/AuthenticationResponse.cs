@@ -1,9 +1,9 @@
 ﻿using System;
-using SharedLibrary.Responses.Abstract;
 using System.Collections.Generic;
 using System.Linq;
+using MVVM_lb6.Domain.Responses.Abstract;
 
-namespace SharedLibrary.Responses
+namespace MVVM_lb6.Domain.Responses
 {
 	[Serializable]
 	public class AuthenticationResponse : ResponseBase, IAuthenticationResponse

@@ -3,3 +3,8 @@ C:\Users\Dimchik\source\repos\RiderProjects\Lb6Project\MVVM-lb6.Server\MVVM-lb6.
 C:\Users\Dimchik\source\repos\RiderProjects\Lb6Project\MVVM-lb6.Server\MVVM-lb6.Domain\obj\Debug\netcoreapp3.1\MVVM-lb6.Domain.AssemblyInfoInputs.cache
 C:\Users\Dimchik\source\repos\RiderProjects\Lb6Project\MVVM-lb6.Server\MVVM-lb6.Domain\obj\Debug\netcoreapp3.1\MVVM-lb6.Domain.AssemblyInfo.cs
 C:\Users\Dimchik\source\repos\RiderProjects\Lb6Project\MVVM-lb6.Server\MVVM-lb6.Domain\obj\Debug\netcoreapp3.1\MVVM-lb6.Domain.csproj.CoreCompileInputs.cache
+C:\Users\Dimchik\source\repos\RiderProjects\Lb6Project\MVVM-lb6.Server\MVVM-lb6.Domain\bin\Debug\netcoreapp3.1\MVVM-lb6.Domain.deps.json
+C:\Users\Dimchik\source\repos\RiderProjects\Lb6Project\MVVM-lb6.Server\MVVM-lb6.Domain\bin\Debug\netcoreapp3.1\MVVM-lb6.Domain.dll
+C:\Users\Dimchik\source\repos\RiderProjects\Lb6Project\MVVM-lb6.Server\MVVM-lb6.Domain\bin\Debug\netcoreapp3.1\MVVM-lb6.Domain.pdb
+C:\Users\Dimchik\source\repos\RiderProjects\Lb6Project\MVVM-lb6.Server\MVVM-lb6.Domain\obj\Debug\netcoreapp3.1\MVVM-lb6.Domain.dll
+C:\Users\Dimchik\source\repos\RiderProjects\Lb6Project\MVVM-lb6.Server\MVVM-lb6.Domain\obj\Debug\netcoreapp3.1\MVVM-lb6.Domain.pdb

@@ -1,7 +1,7 @@
 ﻿using System;
 using System.ComponentModel.DataAnnotations;
 
-namespace SharedLibrary.Requests
+namespace MVVM_lb6.Domain.Requests
 {
     [Serializable]
     public class LoginRequest

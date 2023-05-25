@@ -1,5 +1,5 @@
-﻿using Server.Services.Abstract;
-using SharedLibrary.Models;
+﻿using MVVM_lb6.Domain.Models;
+using Server.Services.Abstract;
 
 namespace MVVM_lb6.Server.Helpers;
 

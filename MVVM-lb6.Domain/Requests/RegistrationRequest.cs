@@ -1,16 +1,18 @@
 ﻿using System;
 using System.ComponentModel.DataAnnotations;
 
-namespace SharedLibrary.Requests
+namespace MVVM_lb6.Domain.Requests
 {
 	[Serializable]
 	public class RegistrationRequest
 	{
 		[Required]
-		public string Username { get; set; }
+		public string Username { get; set; } = "";
+		
 		[Required, EmailAddress]
-		public string Email { get; set; }
+		public string IndividualEmployeeNumber { get; set; } = "";
+		
 		[Required, DataType(DataType.Password)]
-		public string Password { get; set; }
+		public string Password { get; set; } = "";
 	}
 }
