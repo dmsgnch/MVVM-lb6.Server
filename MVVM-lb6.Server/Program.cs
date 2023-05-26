@@ -12,8 +12,6 @@ using MVVM_lb6.Server.Common.Constans;
 using MVVM_lb6.Server.Models;
 using Server.Services;
 using Server.Services.Abstract;
-using AuthenticationService = Microsoft.AspNetCore.Authentication.AuthenticationService;
-using IAuthenticationService = Microsoft.AspNetCore.Authentication.IAuthenticationService;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -28,7 +26,6 @@ builder.Services.AddControllers().AddNewtonsoftJson(i =>
 {
     
 });
-
 
 builder.Services.AddScoped<IHashProvider, HashProvider>();
 builder.Services.AddScoped<IAuthenticationService, AuthenticationService>();

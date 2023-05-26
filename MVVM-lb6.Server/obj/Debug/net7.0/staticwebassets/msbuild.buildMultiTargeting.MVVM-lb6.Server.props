@@ -1,0 +1,3 @@
+﻿<Project>
+  <Import Project="..\build\MVVM-lb6.Server.props" />
+</Project>

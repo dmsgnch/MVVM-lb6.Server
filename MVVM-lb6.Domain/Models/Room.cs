@@ -1,53 +1,25 @@
 using System;
+using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Data;
 
 namespace MVVM_lb6.Domain.Models
 {
-    [Serializable]
+    [Table("Rooms"), Serializable]
     public class Room
     {
+        [Key, DatabaseGenerated(DatabaseGeneratedOption.Identity)] 
         public Guid RoomId { get; set; }
         
-        private ushort _realNumber;
-        private byte _bedsNumber;
-        private decimal _pricePerDay;
+        [Range(0, ushort.MaxValue)] 
+        public ushort RealNumber { get; set; }
 
-        public ushort RealNumber
-        {
-            get => _realNumber;
-            set
-            {
-                if (value < 0) throw new DataException("Unreal data value");
+        [Range(0, byte.MaxValue)] 
+        public byte BedsNumber { get; set; }
 
-                _realNumber = value;
-            }
-        }
-
-        public byte BedsNumber
-        {
-            get => _bedsNumber;
-            set
-            {
-                if (value < 0 || value > 256) throw new DataException("Unreal data value");
-
-                _bedsNumber = value;
-            }
-        }
-
-        public decimal PricePerDay
-        {
-            get => _pricePerDay;
-            set
-            {
-                if (value < 0) throw new DataException("Price can`t have negative value");
-
-                _pricePerDay = value;
-            }
-        }
+        [Range(typeof(decimal), "0", "9999", ErrorMessage = "Value must be greater than or equal to 0.")]
+        public decimal PricePerDay { get; set; }
 
         public bool IsAvailable { get; set; }
-
-        public Guid HotelId { get; set; }
-        public Hotel? Hotel { get; set; }
     }
 }

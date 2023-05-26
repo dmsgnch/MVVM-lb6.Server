@@ -6,7 +6,7 @@ namespace MVVM_lb6.Domain.Requests
     [Serializable]
     public class LoginRequest
     {
-        [Required, EmailAddress]
+        [Required]
         public string IEN { get; set; }
         [Required, DataType(DataType.Password)]
         public string Password { get; set; }
