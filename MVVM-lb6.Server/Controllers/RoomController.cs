@@ -12,7 +12,7 @@ using Server.Services.Abstract;
 
 namespace Server.Controllers;
 
-[Authorize]
+// [Authorize]
 [ApiController]
 [Route("[controller]")]
 public class RoomController : ControllerBase

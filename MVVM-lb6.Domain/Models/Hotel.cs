@@ -13,7 +13,7 @@ namespace MVVM_lb6.Domain.Models
     public class Hotel
     {
         [Key, DatabaseGenerated(DatabaseGeneratedOption.Identity)] 
-        private Guid HotelId { get; set; }
+        public Guid HotelId { get; set; }
         
         [Range(typeof(decimal), "0", "1000000", ErrorMessage = "Value must be greater than or equal to 0.")]
         public decimal Cash { get; set; } = 0;

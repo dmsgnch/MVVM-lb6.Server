@@ -17,7 +17,7 @@ namespace MVVM_lb6.Domain.Routes
             public const string GetAllRooms = "GetAllRooms";
             public const string Create = "Create";
             public const string Update = "Update";
-            public const string Delete = "{id}";
+            public const string Delete = "delete/{id}";
         }
         
         public static class Session

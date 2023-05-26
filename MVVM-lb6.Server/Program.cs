@@ -29,6 +29,7 @@ builder.Services.AddControllers().AddNewtonsoftJson(i =>
 
 builder.Services.AddScoped<IHashProvider, HashProvider>();
 builder.Services.AddScoped<IAuthenticationService, AuthenticationService>();
+builder.Services.AddScoped<IRoomService, RoomService>();
 
 builder.Services.AddHttpContextAccessor();
 

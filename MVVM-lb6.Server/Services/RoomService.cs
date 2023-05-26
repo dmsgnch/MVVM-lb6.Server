@@ -75,14 +75,11 @@ public class RoomService : IRoomService
 		if (room is null)
 			return new ServiceResult(new[] { ErrorMessages.Room.NotFound }) { IsSuccessful = false };
 
-		Context.Rooms.Update(new Room()
-		{
-			RoomId = request.RoomId,
-			BedsNumber = request.BedsNumber,
-			IsAvailable = request.IsAvailable,
-			PricePerDay = request.PricePerDay,
-			RealNumber = request.RealNumber
-		});
+		room.BedsNumber = request.BedsNumber;
+		room.RealNumber = request.RealNumber;
+		room.IsAvailable = request.IsAvailable;
+		room.PricePerDay = request.PricePerDay;
+		
 		Context.SaveChanges();
 
 		return new ServiceResult(new[] { SuccessMessages.Room.Updated }) { IsSuccessful = true };
