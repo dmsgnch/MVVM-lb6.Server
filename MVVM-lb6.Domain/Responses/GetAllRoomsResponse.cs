@@ -4,6 +4,8 @@ using MVVM_lb6.Domain.Responses.Abstract;
 
 namespace MVVM_lb6.Domain.Responses
 {
-    public class AddRoomResponse : ResponseBase
-    { }
+    public class GetAllRoomsResponse : ResponseBase
+    {
+        public IList<Room> Rooms { get; set; }
+    }
 }

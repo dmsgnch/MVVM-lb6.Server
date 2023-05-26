@@ -9,7 +9,7 @@ namespace MVVM_lb6.Domain.Requests
 		[Required]
 		public string Username { get; set; } = "";
 		
-		[Required, EmailAddress]
+		[Required]
 		public string IndividualEmployeeNumber { get; set; } = "";
 		
 		[Required, DataType(DataType.Password)]

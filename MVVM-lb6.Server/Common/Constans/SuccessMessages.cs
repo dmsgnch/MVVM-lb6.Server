@@ -11,12 +11,12 @@ public static class SuccessMessages
     {
         public const string SuccessfulLogin = "Login is successful";
     }
-    public static class Lobby
+    public static class Room
     {
-        public const string Created = "Lobby has been successfully created";
-        public const string Deleted = "Lobby has been successfully deleted";
-        public const string Exited = "You have successfully exited the lobby";
-        public const string Found = "Lobbies has been successfully found";
+        public const string Extracted = "Rooms list has been successfully extracted";
+        public const string Created = "Room has been successfully created";
+        public const string Deleted = "Room has been successfully deleted";
+        public const string Updated = "Room has been successfully updated";
     }
     
     public static class Session

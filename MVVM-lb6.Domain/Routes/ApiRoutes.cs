@@ -12,18 +12,11 @@ namespace MVVM_lb6.Domain.Routes
             public const string Login = "login";
         }
         
-        public static class Hero
+        public static class Room
         {
-            public const string GetById = "{id}";
-            public const string Create = "";
-            public const string Update = "{id}";
-        }
-
-        public static class Lobby
-        {
-            public const string GetAll = "";
-            public const string GetById = "{id}";
-            public const string Create = "";
+            public const string GetAllRooms = "GetAllRooms";
+            public const string Create = "Create";
+            public const string Update = "Update";
             public const string Delete = "{id}";
         }
         

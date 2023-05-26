@@ -6,10 +6,12 @@ namespace Server;
 public class ApplicationDbContext : DbContext
 {
     public DbSet<Room> Rooms { get; set; }
-    public DbSet<ApplicationUser> Users { get; set; }
+    public DbSet<ApplicationUser> ApplicationUsers { get; set; }
+    public DbSet<Hotel> Hotels { get; set; }
     
     public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options) : base(options)
     {
+        //Database.EnsureDeleted();
         Database.EnsureCreated();
     }
 

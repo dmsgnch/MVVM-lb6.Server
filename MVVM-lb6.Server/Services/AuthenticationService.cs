@@ -29,7 +29,7 @@ public class AuthenticationService : IAuthenticationService
 
     public ServiceResult Register(string username, string individualEmployeeNumber, string password)
 	{
-		if(Context.Users.Any(u => u.IndividualEmployeeNumber.Equals(individualEmployeeNumber)))
+		if(Context.ApplicationUsers.Any(u => u.IndividualEmployeeNumber.Equals(individualEmployeeNumber)))
 			return new ServiceResult(ErrorMessages.User.AlreadyExists) {IsSuccessful = false};
 
 		var user = new ApplicationUser
@@ -48,7 +48,7 @@ public class AuthenticationService : IAuthenticationService
     
 	public AuthenticationResult Login(string individualEmployeeNumber, string password)
 	{
-		var user = Context.Users.FirstOrDefault(u => 
+		var user = Context.ApplicationUsers.FirstOrDefault(u => 
 			u.IndividualEmployeeNumber.Equals(individualEmployeeNumber));
 
 		if (user == null ||

@@ -10,9 +10,9 @@ public static class ErrorMessages
     {
         public const string NotRecordsFound = "Email or password is incorrect";
     }
-    public static class Lobby
+    public static class Room
     {
-        public const string NotFound = "There is no lobby with given id";
+        public const string NotFound = "There is no room with given id";
         public const string ThereIsUsers = "There is users in lobby";
         public const string UserAlreadyInLobby = "User already in lobby";
         public const string UserIsNotInLobby = "Lobby does not contain user with given id";
