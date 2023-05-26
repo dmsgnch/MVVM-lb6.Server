@@ -13,11 +13,8 @@ public static class ErrorMessages
     public static class Room
     {
         public const string NotFound = "There is no room with given id";
-        public const string ThereIsUsers = "There is users in lobby";
-        public const string UserAlreadyInLobby = "User already in lobby";
-        public const string UserIsNotInLobby = "Lobby does not contain user with given id";
-        public const string UsersNotReady = "Not all lobby members are ready";
-        public const string NoLobbies = "No active lobbies found. You can start a new game";
+        public const string ThereIsNumber = "There is room with the same real number";
+        public const string DatesOverlap = "The selected date is already booked";
     }
     public static class Session
     {

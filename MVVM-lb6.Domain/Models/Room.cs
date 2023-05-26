@@ -1,7 +1,9 @@
 using System;
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Data;
+using System.Diagnostics.CodeAnalysis;
 
 namespace MVVM_lb6.Domain.Models
 {
@@ -20,6 +22,14 @@ namespace MVVM_lb6.Domain.Models
         [Range(typeof(decimal), "0", "9999", ErrorMessage = "Value must be greater than or equal to 0.")]
         public decimal PricePerDay { get; set; }
 
-        public bool IsAvailable { get; set; }
+        public bool IsAvailable { get; set; } = true;
+
+        [AllowNull]
+        public Dictionary<DateTime, DateTime> BookedDates { get; set; } = 
+            new Dictionary<DateTime, DateTime>();
+        
+        [AllowNull]
+        public Dictionary<DateTime, DateTime> DateOfStay { get; set; } = 
+            new Dictionary<DateTime, DateTime>();
     }
 }

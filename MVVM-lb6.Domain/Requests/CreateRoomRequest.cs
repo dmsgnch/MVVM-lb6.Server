@@ -14,5 +14,8 @@ namespace MVVM_lb6.Domain.Requests
 
         [Required, DataType(DataType.Currency)]
         public decimal PricePerDay { get; set; }
+        
+        [Required] 
+        public bool IsAvailable { get; set; }
     }
 }

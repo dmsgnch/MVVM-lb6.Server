@@ -39,6 +39,21 @@ public class RoomController : ControllerBase
         });
     }
     
+    [HttpGet, Route(ApiRoutes.Room.GetAvailable)]
+    public async Task<IActionResult> GetAvailable()
+    {
+        var result = _roomService.GetAvailable();
+
+        if (result.IsSuccessful is false)
+            throw new DataException();
+        
+        return Ok(new GetAllRoomsResponse()
+        {
+            Info = result.Message,
+            Rooms = result?.Value ?? throw new DataException()
+        });
+    }
+    
     [HttpPost, Route(ApiRoutes.Room.Create)]
     public async Task<IActionResult> CreateRoom([FromBody] CreateRoomRequest request)
     {
@@ -51,7 +66,7 @@ public class RoomController : ControllerBase
     }
 
     [HttpDelete, Route(ApiRoutes.Room.Delete)]
-    public async Task<IActionResult> DeleteLobby([FromRoute] Guid id)
+    public async Task<IActionResult> DeleteRoom([FromRoute] Guid id)
     {
         var result = _roomService.Delete(id);
 
@@ -62,9 +77,31 @@ public class RoomController : ControllerBase
     }
     
     [HttpPut, Route(ApiRoutes.Room.Update)]
-    public async Task<IActionResult> UpdateLobby([FromBody] UpdateRoomRequest request)
+    public async Task<IActionResult> UpdateRoom([FromBody] UpdateRoomRequest request)
     {
         var result = _roomService.Update(request);
+
+        if (result.IsSuccessful is false)
+            return BadRequest(new LambdaResponse() { Info = result.Message });
+        
+        return Ok(new LambdaResponse() { Info = result.Message });
+    }
+    
+    [HttpPut, Route(ApiRoutes.Room.Book)]
+    public async Task<IActionResult> BookTheRoom([FromBody] BookingStayRoomRequest request)
+    {
+        var result = _roomService.BookRoom(request);
+
+        if (result.IsSuccessful is false)
+            return BadRequest(new LambdaResponse() { Info = result.Message });
+        
+        return Ok(new LambdaResponse() { Info = result.Message });
+    }
+    
+    [HttpPut, Route(ApiRoutes.Room.Stay)]
+    public async Task<IActionResult> StayInTheRoom([FromBody] BookingStayRoomRequest request)
+    {
+        var result = _roomService.StayInTheRoom(request);
 
         if (result.IsSuccessful is false)
             return BadRequest(new LambdaResponse() { Info = result.Message });

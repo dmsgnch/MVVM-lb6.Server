@@ -18,6 +18,9 @@ namespace MVVM_lb6.Domain.Routes
             public const string Create = "Create";
             public const string Update = "Update";
             public const string Delete = "delete/{id}";
+            public const string GetAvailable = "GetAvailable";
+            public const string Book = "book";
+            public const string Stay = "stay";
         }
         
         public static class Session
