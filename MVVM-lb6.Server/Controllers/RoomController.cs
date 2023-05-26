@@ -101,7 +101,7 @@ public class RoomController : ControllerBase
     [HttpPut, Route(ApiRoutes.Room.Stay)]
     public async Task<IActionResult> StayInTheRoom([FromBody] BookingStayRoomRequest request)
     {
-        var result = _roomService.StayInTheRoom(request);
+        var result = _roomService.StayInRoom(request);
 
         if (result.IsSuccessful is false)
             return BadRequest(new LambdaResponse() { Info = result.Message });

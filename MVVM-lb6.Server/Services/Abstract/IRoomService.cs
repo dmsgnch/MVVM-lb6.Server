@@ -12,4 +12,6 @@ public interface IRoomService
     ServiceResult Create(CreateRoomRequest request);
     ServiceResult Delete(Guid id);
     ServiceResult Update(UpdateRoomRequest request);
+    ServiceResult BookRoom(BookingStayRoomRequest request);
+    ServiceResult StayInRoom(BookingStayRoomRequest request);
 }

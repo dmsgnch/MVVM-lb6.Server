@@ -3,6 +3,7 @@ using System.Security.Claims;
 using System.Text;
 using System.Text.RegularExpressions;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore.ChangeTracking.Internal;
 using Microsoft.IdentityModel.Tokens;
 using MVVM_lb6.Domain.Models;
 using MVVM_lb6.Domain.Requests;
@@ -50,8 +51,7 @@ public class RoomService : IRoomService
 	    var room = Context.Rooms.FirstOrDefault(r => r.RealNumber.Equals(request.RealNumber));
 		if (room is not null)
 			return new ServiceResult(ErrorMessages.Room.ThereIsNumber) {IsSuccessful = false};
-		
-		
+
 		var newRoom = new Room
 		{
 			RoomId = Guid.NewGuid(),
@@ -64,8 +64,33 @@ public class RoomService : IRoomService
 		Context.Rooms.Add(newRoom);
 		Context.SaveChanges();
 
+		CheckStateStatus();
+
 		return new ServiceResult(SuccessMessages.Room.Created) {IsSuccessful = true};
 	}
+
+    private void CheckStateStatus()
+    {
+	    List<Room> allRooms = GetAll()?.Value ?? new List<Room>();
+	    List<Room> availableRooms = GetAvailable()?.Value ?? new List<Room>();
+	    
+	    if (StateMachine.HotelState is HotelState.HolidaySeason)
+	    {
+		    if (availableRooms.Count.Equals(0))
+		    {
+			    StateMachine.ChangeState(HotelState.GuestAccommodationStop);
+		    }
+	    }
+	    else if (StateMachine.HotelState is HotelState.GuestAccommodationStop)
+	    {
+		    if (Math.Ceiling((double)availableRooms.Count / (double)allRooms.Count * 100) < 90 &&
+		        allRooms.Count >= 5)
+		    {
+			    StateMachine.ChangeState(HotelState.HolidaySeason);
+		    }
+	    }
+    }
+    
     
 	public ServiceResult Delete(Guid id)
 	{
@@ -77,6 +102,8 @@ public class RoomService : IRoomService
 		
 		Context.Rooms.Remove(room);
 		Context.SaveChanges();
+		
+		CheckStateStatus();
 
 		return new ServiceResult(new[] { SuccessMessages.Room.Deleted }) { IsSuccessful = true };
 	}
@@ -98,6 +125,8 @@ public class RoomService : IRoomService
 		room.PricePerDay = request.PricePerDay;
 		
 		Context.SaveChanges();
+		
+		CheckStateStatus();
 
 		return new ServiceResult(new[] { SuccessMessages.Room.Updated }) { IsSuccessful = true };
 	}
@@ -120,8 +149,11 @@ public class RoomService : IRoomService
 		}
 
 		room.BookedDates.Add(request.FirstDate, request.SecondDate);
+		room.IsAvailable = false;
 
 		Context.SaveChanges();
+		
+		CheckStateStatus();
 
 		return new ServiceResult(new[] { SuccessMessages.Room.Updated }) { IsSuccessful = true };
 	}
@@ -144,8 +176,11 @@ public class RoomService : IRoomService
 		}
 
 		room.DateOfStay.Add(request.FirstDate, request.SecondDate);
+		room.IsAvailable = false;
 
 		Context.SaveChanges();
+		
+		CheckStateStatus();
 
 		return new ServiceResult(new[] { SuccessMessages.Room.Updated }) { IsSuccessful = true };
 	}
