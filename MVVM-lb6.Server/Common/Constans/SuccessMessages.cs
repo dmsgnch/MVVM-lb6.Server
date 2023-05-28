@@ -17,6 +17,8 @@ public static class SuccessMessages
         public const string Created = "Room has been successfully created";
         public const string Deleted = "Room has been successfully deleted";
         public const string Updated = "Room has been successfully updated";
+        public const string SuccessfulBooking = "The room was successfully booked for the selected time range";
+        public const string SuccessfulSettling = "The room was successfully settled for the selected time range";
     }
     
     public static class Session

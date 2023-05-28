@@ -10,9 +10,9 @@ namespace MVVM_lb6.Domain.Models
     [Table("Rooms"), Serializable]
     public class Room
     {
-        [Key, DatabaseGenerated(DatabaseGeneratedOption.Identity)] 
+        [Key]
         public Guid RoomId { get; set; }
-        
+    
         [Range(0, ushort.MaxValue)] 
         public ushort RealNumber { get; set; }
 
@@ -24,12 +24,9 @@ namespace MVVM_lb6.Domain.Models
 
         public bool IsAvailable { get; set; } = true;
 
-        [AllowNull]
-        public Dictionary<DateTime, DateTime> BookedDates { get; set; } = 
-            new Dictionary<DateTime, DateTime>();
-        
-        [AllowNull]
-        public Dictionary<DateTime, DateTime> DateOfStay { get; set; } = 
-            new Dictionary<DateTime, DateTime>();
+        [NotMapped]
+        public List<BookTimeRange> BookedDates { get; set; } = new List<BookTimeRange>();
+        [NotMapped]
+        public List<BookTimeRange> DateOfStay { get; set; } = new List<BookTimeRange>();
     }
 }

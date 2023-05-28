@@ -70,3 +70,4 @@ C:\Users\Dimchik\source\repos\RiderProjects\Lb6Project\MVVM-lb6.Server\MVVM-lb6.
 C:\Users\Dimchik\source\repos\RiderProjects\Lb6Project\MVVM-lb6.Server\MVVM-lb6.Server\obj\Debug\net7.0\MVVM-lb6.Server.pdb
 C:\Users\Dimchik\source\repos\RiderProjects\Lb6Project\MVVM-lb6.Server\MVVM-lb6.Server\obj\Debug\net7.0\MVVM-lb6.Server.genruntimeconfig.cache
 C:\Users\Dimchik\source\repos\RiderProjects\Lb6Project\MVVM-lb6.Server\MVVM-lb6.Server\obj\Debug\net7.0\ref\MVVM-lb6.Server.dll
+C:\Users\Dimchik\source\repos\RiderProjects\Lb6Project\MVVM-lb6.Server\MVVM-lb6.Server\bin\Debug\net7.0\log.json
